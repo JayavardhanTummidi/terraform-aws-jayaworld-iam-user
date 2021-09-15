@@ -16,3 +16,11 @@ resource "aws_iam_user_group_membership" "jayaworld-iam-group-membership" {
     user = aws_iam_user.jayaworld-iam-user.name
     groups = var.iam_groups
 }
+
+# Manages an IAM User Login Profile with limited support for password creation during Terraform resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.
+resource "aws_iam_user_login_profile" "jayaworld-iam-login-profile" {
+    user = aws_iam_user.jayaworld-iam-user.name
+    pgp_key = var.pgp_key
+    password_length = var.iamuser_password_length
+    password_reset_required = var.iamuser_password_reset_required
+}

@@ -32,3 +32,21 @@ variable "iam_groups" {
     type = list(string)
     default = []
 }
+
+variable "pgp_key" {
+    description = "Either a base-64 encoded PGP public key, or a keybase username in the form keybase:username. Only applies on resource creation. Drift detection is not possible with this argument."
+    type = string
+}
+
+variable "iamuser_password_length" {
+    description = "The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
+    type = number
+    default = 20
+}
+
+variable "iamuser_password_reset_required" {
+    description = "Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
+    type = bool
+    default = true
+}
+
