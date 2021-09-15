@@ -26,3 +26,9 @@ variable "tags" {
     type = map(string)
     default = {}
 }
+
+variable "iam_groups" {
+    description = "Add users to the groups"
+    type = list(string)
+    default = []
+}

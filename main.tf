@@ -10,3 +10,9 @@ resource "aws_iam_user" "jayaworld-iam-user" {
     force_destroy = var.force_destroy
     tags = merge(var.tags)
 }
+
+# For adding users to the groups - create group membership resources
+resource "aws_iam_user_group_membership" "jayaworld-iam-group-membership" {
+    user = aws_iam_user.jayaworld-iam-user.name
+    groups = var.iam_groups
+}
