@@ -36,6 +36,7 @@ variable "iam_groups" {
 variable "pgp_key" {
     description = "Either a base-64 encoded PGP public key, or a keybase username in the form keybase:username. Only applies on resource creation. Drift detection is not possible with this argument."
     type = string
+    default = ""
 }
 
 variable "iamuser_password_length" {
