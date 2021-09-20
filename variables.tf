@@ -51,3 +51,26 @@ variable "iamuser_password_reset_required" {
     default = true
 }
 
+variable "iam_access_key_status" {
+    description = "Access key status to apply. Defaults to Active. Valid values are Active and Inactive"
+    type = string
+    default = "Active"
+}
+
+variable "user_inline_policy_name" {
+    description = "The name of the policy. If omitted, Terraform will assign a random, unique name"
+    type = string
+    default = ""
+}
+
+variable "user_inline_policy" {
+    description = "The policy document. This is a JSON formatted string."
+    type = string
+    default = ""
+}
+
+variable "user_managed_policy_arn" {
+    description = "The ARN of the policy you want to apply"
+    type = string
+    default = ""
+}
