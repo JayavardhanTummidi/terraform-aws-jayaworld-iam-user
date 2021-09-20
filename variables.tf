@@ -66,7 +66,7 @@ variable "user_inline_policy_name" {
 variable "user_inline_policy" {
     description = "The policy document. This is a JSON formatted string."
     type = string
-    default = ""
+    default = null
 }
 
 variable "user_managed_policy_arn" {
