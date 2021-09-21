@@ -106,6 +106,8 @@ module "jayaworld-iam-user" {
 }
 
 EOT
+
+
   # AWS managed policies ARN
 
   user_managed_policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
