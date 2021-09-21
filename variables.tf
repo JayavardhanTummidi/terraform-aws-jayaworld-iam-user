@@ -54,7 +54,7 @@ variable "iamuser_password_reset_required" {
 variable "iam_access_key_status" {
   description = "Access key status to apply. Defaults to Active. Valid values are Active and Inactive"
   type        = string
-  default     = "InActive"
+  default     = "Active"
 }
 
 variable "user_inline_policy_name" {
