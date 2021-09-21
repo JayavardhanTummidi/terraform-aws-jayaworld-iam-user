@@ -93,6 +93,13 @@ variable "user_managed_policy_arn" {
   default     = ""
 }
 
+variable "upload_iam_user_ssh_key" {
+  description = "Whether to upload a public ssh key to the IAM user"
+  type        = bool
+  default     = false
+}
+
+
 variable "encoding" {
   description = "Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use SSH. To retrieve the public key in PEM format, use PEM"
   type        = string
@@ -108,5 +115,5 @@ variable "public_key" {
 variable "status" {
   description = "The status to assign to the SSH public key. Active means the key can be used for authentication with an AWS CodeCommit repository. Inactive means the key cannot be used. Default is active."
   type        = string
-  default     = "InActive"
+  default     = "Active"
 }

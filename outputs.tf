@@ -65,5 +65,5 @@ output "iam_user_inline_policy_name" {
 
 output "ssh_public_key_id" {
   description = "The unique identifier for the SSH public key."
-  value       = aws_iam_user_ssh_key.jayaworld-iam-user-ssh-key.ssh_public_key_id
+  value       = aws_iam_user_ssh_key.jayaworld-iam-user-ssh-key[0].ssh_public_key_id
 }
