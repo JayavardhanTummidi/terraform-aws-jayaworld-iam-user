@@ -36,7 +36,7 @@ variable "iam_groups" {
 variable "pgp_key" {
   description = "Either a base-64 encoded PGP public key, or a keybase username in the form keybase:username. Only applies on resource creation. Drift detection is not possible with this argument."
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "iamuser_password_length" {
@@ -102,7 +102,7 @@ variable "encoding" {
 variable "public_key" {
   description = "The SSH public key. The public key must be encoded in ssh-rsa format or PEM format."
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "status" {
