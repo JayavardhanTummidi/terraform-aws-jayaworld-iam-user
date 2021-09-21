@@ -66,8 +66,8 @@ variable "user_inline_policy_name" {
 variable "user_inline_policy" {
   description = "The policy document. This is a JSON formatted string."
   type        = string
-  default     = <<EOF
-    {
+  default     = <<EOT
+{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -84,7 +84,7 @@ variable "user_inline_policy" {
         }
     ]
 }
-EOF
+EOT
 }
 
 variable "user_managed_policy_arn" {
