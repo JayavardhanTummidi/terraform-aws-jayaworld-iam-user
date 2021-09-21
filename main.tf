@@ -43,4 +43,12 @@ resource "aws_iam_user_policy" "jayaworld-iam-user-policy" {
 resource "aws_iam_user_policy_attachment" "jayaworld-iam-user-managed-policy" {
   user       = aws_iam_user.jayaworld-iam-user.name
   policy_arn = var.user_managed_policy_arn
-} 
+}
+
+# Uploads an SSH public key and associates it with the specified IAM user for AWS Code Commit
+resource "aws_iam_user_ssh_key" "jayaworld-iam-user-ssh-key" {
+  username   = aws_iam_user.jayaworld-iam-user.name
+  encoding   = var.encoding
+  public_key = var.public_key
+  status     = var.status
+}

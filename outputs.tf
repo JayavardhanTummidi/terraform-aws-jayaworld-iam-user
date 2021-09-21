@@ -62,3 +62,8 @@ output "iam_user_inline_policy_name" {
   description = "The name of the policy (always set)."
   value       = aws_iam_user_policy.jayaworld-iam-user-policy.name
 }
+
+output "ssh_public_key_id" {
+  description = "The unique identifier for the SSH public key."
+  value       = aws_iam_user_ssh_key.jayaworld-iam-user-ssh-key.ssh_public_key_id
+}

@@ -36,7 +36,7 @@ variable "iam_groups" {
 variable "pgp_key" {
   description = "Either a base-64 encoded PGP public key, or a keybase username in the form keybase:username. Only applies on resource creation. Drift detection is not possible with this argument."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "iamuser_password_length" {
@@ -91,4 +91,22 @@ variable "user_managed_policy_arn" {
   description = "The ARN of the policy you want to apply"
   type        = string
   default     = ""
+}
+
+variable "encoding" {
+  description = "Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use SSH. To retrieve the public key in PEM format, use PEM"
+  type        = string
+  default     = "SSH"
+}
+
+variable "public_key" {
+  description = "The SSH public key. The public key must be encoded in ssh-rsa format or PEM format."
+  type        = string
+  default     = null
+}
+
+variable "status" {
+  description = "The status to assign to the SSH public key. Active means the key can be used for authentication with an AWS CodeCommit repository. Inactive means the key cannot be used. Default is active."
+  type        = string
+  default     = "Active"
 }
