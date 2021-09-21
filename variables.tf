@@ -54,7 +54,7 @@ variable "iamuser_password_reset_required" {
 variable "iam_access_key_status" {
   description = "Access key status to apply. Defaults to Active. Valid values are Active and Inactive"
   type        = string
-  default     = "Active"
+  default     = "InActive"
 }
 
 variable "user_inline_policy_name" {
@@ -108,5 +108,5 @@ variable "public_key" {
 variable "status" {
   description = "The status to assign to the SSH public key. Active means the key can be used for authentication with an AWS CodeCommit repository. Inactive means the key cannot be used. Default is active."
   type        = string
-  default     = "Active"
+  default     = "InActive"
 }
