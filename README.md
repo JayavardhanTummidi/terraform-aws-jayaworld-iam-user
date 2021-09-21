@@ -121,6 +121,8 @@ module "jayaworld-iam-user" {
   source  = "app.terraform.io/jaya-world/jayaworld-iam-user/aws"
   # insert required variables here
 
+  upload_iam_user_ssh_key = "true"
+
   iam_user_name    =   "jaya-be-happy"
 
   encoding = "SSH"
